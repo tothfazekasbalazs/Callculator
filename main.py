@@ -1,5 +1,3 @@
-import colorama
-
 def osszeadás():
     b = 0
     while True:
@@ -8,12 +6,16 @@ def osszeadás():
         if a == "=":
             break
 
+        elif a == "" or a == " ":
+            osszeadás()
+
         try:
             a = int(a)
             b = b + a
 
         except:
-            ossze()
+            osszeadás()
+    print(b)
 
 def kivonás():
     b = 0
@@ -29,6 +31,7 @@ def kivonás():
 
         except:
             kivonás()
+    print(b)
 
 def szorzás():
     b = int(input("Mennyi: "))
@@ -44,6 +47,7 @@ def szorzás():
 
         except:
             szorzás()
+    print(b)
 
 def osztás():
     b = int(input("Mennyi: "))
@@ -59,6 +63,7 @@ def osztás():
 
         except:
             osztás()
+    print(b)
 
 def osztás2():
     b = int(input("Mennyi: "))
@@ -74,17 +79,16 @@ def osztás2():
 
         except:
             osztás2()
+    print(b)
 
 def user_input():
 
     print("""
-    
     1. Összeadás
     2. Kivonás
     3. Szorzás
     4. Osztás
     5. Egés osztás
-    
     """)
 
     a = input("Írd be a művelet számát: ")
@@ -107,5 +111,5 @@ def user_input():
     else:
         print("Rossz az input.")
         user_input()
-        r
+        
 user_input()
